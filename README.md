@@ -7,7 +7,7 @@ Grab the code:
 
 ```
 git clone https://github.com/btemperton/viral_HVR_finder.git
-cd vira_HVR_finder
+cd viral_HVR_finder
 ```
 Set up an appropriate conda environment
 
