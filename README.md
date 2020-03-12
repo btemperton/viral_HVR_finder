@@ -12,7 +12,7 @@ cd viral_HVR_finder
 Set up an appropriate conda environment
 
 ```
-conda create -n find_hvrs python=3.6 pandas numpy matplotlib
+conda create -y -n find_hvrs python=3.6 pandas=0.23.4 numpy matplotlib
 conda activate find_hvrs
 ```
 
