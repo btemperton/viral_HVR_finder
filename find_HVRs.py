@@ -36,10 +36,17 @@ def setup_args():
     return parser.parse_args()
 
 
-def main():
+def init_args():
+    """
+    Needed to add this method so that windows multithreading works...
+    :return: nothing
+    """
     global args
     args = setup_args()
 
+
+def main():
+    init_args()
     create_output_dir(args.output_folder)
     plt.style.use('seaborn-ticks')
 
@@ -127,7 +134,7 @@ def find_hvrs(group):
 
 
 def apply_parallel(dfGrouped, func):
-    with Pool(cpu_count()) as p:
+    with Pool(cpu_count(), initializer=init_args) as p:
         ret_list = p.map(func, [group for name, group in dfGrouped])
     return ret_list
 
